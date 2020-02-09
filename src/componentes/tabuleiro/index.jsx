@@ -60,10 +60,11 @@ export default class Tabuleiro extends Component {
 
   render() {
     const onClick = indice => this.clickButton(indice);
+    const [player1, player2] = this.state.players;
     return ( 
       <div> 
-        <Player name={this.state.players[0].nome} victories={this.state.players[0].vitorias}/>
-        <Player name={this.state.players[1].nome} victories={this.state.players[1].vitorias}/>
+        <Player name={player1.nome} victories={player1.vitorias}/>
+        <Player name={player2.nome} victories={player2.vitorias}/>
         <div className="tabuleiro">
           {
             this.state.values.map((item, index) =>(
