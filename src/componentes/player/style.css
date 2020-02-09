@@ -1,16 +1,17 @@
-.player{
-  display: flex;
-  width: 120px;
-  height: 20px;
-  text-align: left;
-  margin-left: auto;
-  margin-right: auto;
+.player {
+    display: flex;
+    width: 120px;
+    height: 20px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.player-name{
-  width: 100px;
+.player-name {
+    width: 100px;
 }
 
-.player-victories{
-  width: 20px;
+.player-victories {
+    width: 20px;
+    margin-left: 5px;
 }
