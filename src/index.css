@@ -6,12 +6,12 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: #455A64;
     color: #FFFFFF;
     font-family: 'Roboto Mono', monospace;
 }
 
 body {
+    background-color: #455A64;
     display: flex;
     justify-content: center;
     align-items: center;

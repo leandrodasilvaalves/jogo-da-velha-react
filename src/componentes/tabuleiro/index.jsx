@@ -81,6 +81,8 @@ export default class Tabuleiro extends Component {
             ))
           }
         </div>
+        <button className="btn novo-jogo">Novo Jogo</button>
+        <button onClick={() =>this.setState({...initialState}) } className="btn zerar-jogo">Zerar Jogo</button>
       </div>
     )
   }

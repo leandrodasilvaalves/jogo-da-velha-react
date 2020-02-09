@@ -7,3 +7,28 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
+
+.btn {
+    width: 100px;
+    height: 35px;
+    border: none;
+    margin: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+.novo-jogo {
+    background-color: green;
+}
+
+.novo-jogo:active {
+    background-color: rgb(2, 94, 2);
+}
+
+.zerar-jogo {
+    background-color: red;
+}
+
+.zerar-jogo:active {
+    background-color: rgb(136, 4, 4);
+}
