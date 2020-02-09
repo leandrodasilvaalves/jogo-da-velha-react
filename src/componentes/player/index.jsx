@@ -1,6 +1,8 @@
 import React from 'react';
+import './style.css';
 
 export default props =>
   <div>
-    <div>{props.name} : 00</div>
+    <div className="player">
+      <span className="player-name">{props.name}</span> : <span className="player-victories">{ props.victories }</span></div>
   </div>
