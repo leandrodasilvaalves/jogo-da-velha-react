@@ -10,11 +10,11 @@ const initialState = {
   vencedor: false,
   players:[
     {
-      nome: 'Leandro',
+      nome: 'Jogador X',
       vitorias: 0
     },
     {
-      nome: 'Isabella',
+      nome: 'Jogador O',
       vitorias: 0
     },
   ]
@@ -51,7 +51,10 @@ export default class Tabuleiro extends Component {
       const[f1, f2, f3] = forma;
       const [v1,v2,v3 ] = [this.state.values[f1], this.state.values[f2], this.state.values[f3]];
       if(v1 && v2 && v3 && v1 === v2 && v2 === v3){
-        alert('Ganhou');
+        const indiceNome = this.state.count % 2 === 0 ? 0 : 1;
+        const {nome} = this.state.players[indiceNome];
+
+        alert(`O jogador "${nome}" venceu a partida`);
         this.setState({vencedor: true});
         return;
       }
