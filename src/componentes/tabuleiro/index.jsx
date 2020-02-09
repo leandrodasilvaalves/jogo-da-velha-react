@@ -4,25 +4,28 @@ import "./style.css";
 import Button from '../button';
 import Player from '../player';
 
-const initialState = {
-  values: Array(9).fill(null),
-  count: 0,
-  vencedor: false,
-  players: [
-    {
-      nome: 'Jogador X',
-      vitorias: 0
-    },
-    {
-      nome: 'Jogador O',
-      vitorias: 0
-    },
-  ]
-};
-
 export default class Tabuleiro extends Component {
 
-  state = {...initialState};
+  get initialState() {
+    return {
+      values: Array(9).fill(null),
+      count: 0,
+      vencedor: false,
+      players: [
+        {
+          nome: 'Jogador X',
+          vitorias: 0
+        },
+        {
+          nome: 'Jogador O',
+          vitorias: 0
+        },
+      ]
+    };
+
+  }
+
+  state = this.initialState;
   formasDeGanho = [
     [0, 1, 2],
     [3, 4, 5],
@@ -44,7 +47,7 @@ export default class Tabuleiro extends Component {
     newState.count++;
     this.setState(newState);
     this.verificarVencedor();
-    
+
   }
 
   verificarVencedor() {
@@ -64,7 +67,14 @@ export default class Tabuleiro extends Component {
     let jogadorVencendor = this.state.players[indiceNome];
     jogadorVencendor.vitorias++;
     this.setState([...this.state.players, jogadorVencendor]);
-    alert(`O jogador "${jogadorVencendor.nome}" venceu a partida`);    
+    alert(`O jogador "${jogadorVencendor.nome}" venceu a partida`);
+  }
+
+  novoJogo(){
+    const players = this.state.players;
+    let newState = this.initialState;
+    newState.players = players;
+    this.setState(newState);
   }
 
   render() {
@@ -81,8 +91,8 @@ export default class Tabuleiro extends Component {
             ))
           }
         </div>
-        <button className="btn novo-jogo">Novo Jogo</button>
-        <button onClick={() =>this.setState({...initialState}) } className="btn zerar-jogo">Zerar Jogo</button>
+        <button className="btn novo-jogo" onClick={() => this.novoJogo()}>Novo Jogo</button>
+        <button onClick={() => this.setState(this.initialState)} className="btn zerar-jogo">Zerar Jogo</button>
       </div>
     )
   }
